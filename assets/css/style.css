@@ -23,11 +23,13 @@ h2 {
 h3 {
   font-weight: bold;
   font-size: 22px;
+  margin-bottom: 20px;
 }
 
 h4 {
   font-weight: bold;
   font-size: 20px;
+  margin: 10px 0;
 }
 
 a {
@@ -125,9 +127,31 @@ h1 :first-child {
   /* overflow: hidden; */
   box-sizing: border-box;
 }
+
 .pictureBlock .bigPicture {
-  background-color: aquamarine;
   width: 60%;
+  position: relative;
+}
+.pictureBlock .bigPicture > div {
+  position: absolute;
+  top: 0;
+  left: 20px;
+  width: 100px;
+  height: 100px;
+  background-color: orange;
+}
+.pictureBlock .bigPicture > button {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  background-color: black;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+}
+.pictureBlock .bigPicture > button:hover {
+  opacity: 0.8;
 }
 
 .pictureBlock .twoPictures {
@@ -225,26 +249,72 @@ main .navPicture nav {
 .immanquables {
   display: flex;
   flex-direction: row;
-  gap: 10px;
   width: 100%;
   flex-wrap: nowrap;
-  overflow: hidden;
-  overflow-x: scroll;
 }
 
-.immanquables div {
+.immanquables .descriptif {
   height: 320px;
-  width: 300px;
-  flex-shrink: 0;
+  width: 270px;
 }
+.immanquables .descriptif > p {
+  margin-bottom: 20px;
+}
+
+.immanquables .carrousel {
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  gap: 10px;
+  flex: 1;
+  /*  Hide scrollbar for IE, Edge and Firefox */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+/* Hide scrollbar for  Chrome, Safari, Opera*/
+.immanquables .carrousel::-webkit-scrollbar {
+  display: none;
+  /* width: 0;
+  height: 0; */
+}
+
+.immanquables .carrousel > div {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  flex-shrink: 0;
+  position: relative;
+}
+
 .immanquables img {
-  width: 100%;
-  height: 268px;
+  height: 70%;
   object-fit: cover;
 }
 
-.immanquables div:first-of-type {
-  position: fixed;
-  top: 300;
-  z-index: 1;
+.immanquables .heart {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  display: flex;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #fff;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+}
+.immanquables .heart:hover {
+  opacity: 0.9;
+}
+
+.immanquables .medaille {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 150px;
+  background-color: coral;
+  color: #fff;
 }
